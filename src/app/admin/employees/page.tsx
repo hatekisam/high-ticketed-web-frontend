@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { DataTable } from "@/components/core/table/DataTable";
 import { ColumnDef } from "@tanstack/react-table";
 import React from "react";
@@ -168,11 +168,6 @@ const Employees = () => {
   ];
   const columns: ColumnDef<any>[] = [
     {
-      accessorKey: "id",
-      header: "ID",
-      cell: ({ row }) => <div>{row.getValue("id")}</div>,
-    },
-    {
       accessorKey: "name",
       header: "Name",
       cell: ({ row }) => <div>{row.getValue("name")}</div>,
@@ -202,8 +197,8 @@ const Employees = () => {
       header: "Actions",
       cell: ({ row }) => (
         <div className="flex items-center  justify-center">
-          <button className="px-4 py-1 rounded-full border bg-[#523873] text-white">
-            <p>Appeal</p>
+          <button className="px-10 py-1 rounded-full border bg-slate-900 text-white">
+            <p>Pay</p>
           </button>
         </div>
       ),
@@ -213,7 +208,9 @@ const Employees = () => {
   return (
     <div className="p-5 overflow-y-auto h-screen">
       <p className="text-xl  mt-2 ">Employees</p>
-      <DataTable columns={columns} data={employees} />
+      <div className="mt-5">
+        <DataTable columns={columns} data={employees} />
+      </div>
     </div>
   );
 };

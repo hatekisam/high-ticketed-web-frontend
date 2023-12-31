@@ -26,7 +26,7 @@ const PaginationForm: React.FC<PaginationFormProps> = ({
         type="number"
         value={page}
         onChange={(e) => setPage(Number(e.target.value))}
-        className="border p-1 rounded w-16"
+        className="border p-1 rounded w-16 bg-[#121316]"
       />
       <button
         type="submit"

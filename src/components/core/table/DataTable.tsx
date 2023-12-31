@@ -175,7 +175,7 @@ export function DataTable({
             <table style={{ minWidth: minW ?? 700 }} className=" w-full ">
               <thead className=" text-mainPurple">
                 {table.getHeaderGroups().map((headerGroup) => (
-                  <tr className=" bg-[#EDEEF3]  " key={headerGroup.id}>
+                  <tr className=" bg-[#191A1D]  " key={headerGroup.id}>
                     {headerGroup.headers.map((header, i) => {
                       return (
                         <td
@@ -205,7 +205,7 @@ export function DataTable({
                     <tr
                       className={`rounded-md overflow-hidden ${
                         i % 2 !== 0 ? "bg-[#4343430f]" : "bg-[#43434308]"
-                      }  border-2 border-[#F7F8FD]`}
+                      }  border-2 border-[#121316]`}
                       key={row.id}
                       data-state={row.getIsSelected() && "selected"}
                     >
@@ -249,8 +249,13 @@ export function DataTable({
               {table?.getFilteredRowModel().rows.length} row(s) selected.
             </div>
           </div>
-          <div className="flex w-full justify-center">
+          <div className="flex w-full justify-center text-gray-400">
             <Pagination
+              styles={{
+                control: { backgroundColor: "#191A1D", border: "none" },
+                dots: { backgroundColor: "red", color: "red" },
+              }}
+              className="bg-[#121316]"
               total={
                 isPaginated
                   ? paginationProps?.paginateOpts?.totalPages ?? 1
@@ -293,7 +298,7 @@ export function DataTable({
               <strong>
                 {isPaginated
                   ? (paginationProps?.paginateOpts.page ?? 0) + 1
-                  : table?.getState().pagination.pageIndex + 1}
+                  : table?.getState().pagination.pageIndex + 1}{" "}
                 of{" "}
                 {isPaginated
                   ? paginationProps?.paginateOpts.totalPages
@@ -315,7 +320,8 @@ export function DataTable({
               <span>Show</span>
               <Select
                 size="xs"
-                // label="Your favorite library"
+                className="bg-[#121316]"
+                style={{ backgroundColor: "#121316" }}
                 placeholder="Pick Page Size"
                 data={[5, 10, 20, 30, 40, 50, 100, 200, 500].map((val) =>
                   String(`${val}`)
