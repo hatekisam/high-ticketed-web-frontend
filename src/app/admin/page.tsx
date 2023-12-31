@@ -15,7 +15,7 @@ const Admin = () => {
     return greeting;
   };
   return (
-    <div className="p-5">
+    <div className="p-5 overflow-y-auto h-screen">
       <p className="text-xl  mt-2 ">
         {getGreeting()} <span className="font-extrabold">Mugisha</span>
       </p>
