@@ -21,13 +21,13 @@ const Input: React.FC<Props> = ({
   const [showPw, setShowP] = useState(false);
   return (
     <div className="my-2 w-full">
-      <p className="text-black capitalize mb-1 text-sm">{label}</p>
+      <p className="capitalize mb-1 text-sm">{label}</p>
       {type !== "password" ? (
         <input
           {...register(label.toLowerCase())}
           type={type || "text"}
           className={clsx(
-            "px-4 py-2 rounded-full border  outline-none w-full",
+            "px-4 py-2 rounded-full border bg-inherit  outline-none w-full text-sm",
             error ? "border-red-500" : "border-[#0C21C1]"
           )}
           placeholder={placeholder}
@@ -38,7 +38,7 @@ const Input: React.FC<Props> = ({
             {...register(label.toLowerCase())}
             type={showPw ? "text" : "password"}
             className={clsx(
-              "px-4 py-2 pr-10 rounded-full border  outline-none w-full",
+              "px-4 py-2 pr-10 rounded-full border  bg-[#121316] outline-none w-full text-sm",
               error ? "border-red-500" : "border-[#0C21C1]"
             )}
             placeholder={placeholder}

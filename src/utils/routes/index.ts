@@ -1,6 +1,6 @@
 export interface SideBarRoute {
   path: string;
-  icon: React.ComponentType<any>;
+  icon?: any;
   exact?: boolean;
   routes?: SideBarRoute[];
   name: string;
