@@ -1,7 +1,8 @@
+import { SideBarRoute } from "@/utils/routes";
 import React from "react";
 
 interface Props {
-  routes: SidebarRoutes[];
+  routes: SideBarRoute[];
 }
 
 const Navbar: React.FC<Props> = ({ routes }) => {

@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/sidebar/Sidebar";
 import { userRoutes } from "@/utils/routes/user.routes";
 import type { Metadata } from "next";

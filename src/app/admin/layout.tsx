@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/sidebar/Sidebar";
 import { adminRoutes } from "@/utils/routes/admin.routes";
 import type { Metadata } from "next";

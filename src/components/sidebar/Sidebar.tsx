@@ -23,7 +23,7 @@ const Sidebar: React.FC<Props> = ({ routes }) => {
     setMobileNav(false);
   }, [path]);
   return (
-    <div className="rounded-md  bg-[#191A1D] w-[20%] p-4">
+    <div className="rounded-md  bg-[#191A1D] w-[20%] p-4 overflow-y-auto">
       <p className="text-2xl font-bold">HTicketed</p>
       <div className="my-5">
         <p className="font-bold">MAIN</p>
@@ -50,7 +50,42 @@ const Sidebar: React.FC<Props> = ({ routes }) => {
                 }
               >
                 {/* <route.icon size={route.iconSize ?? 20} /> */}
-                <p className="transition-all duration-200 text-sm">{route.name}</p>
+                <p className="transition-all duration-200 text-sm">
+                  {route.name}
+                </p>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+      <div className="my-5">
+        <p className="font-bold">PINNED</p>
+        <div className="">
+          {routes.map((route, i) => {
+            if (route.hasSubRoutes && route.routes)
+              return (
+                <WithSubRoutes
+                  key={route.name}
+                  route={route}
+                  path={path}
+                  opened={opened}
+                  setOpened={setOpened}
+                />
+              );
+            return (
+              <Link
+                key={route.name}
+                href={route.path}
+                className={
+                  isActiveLink(route.path, i)
+                    ? "flex flex-row gap-5 items-center p-2 rounded-lg bg-[rgba(42,10,82,0.1)] text-[rgba(42,10,82,0.8)] my-1"
+                    : "flex flex-row gap-5 items-center p-2 rounded-lg hover:bg-[rgba(42,10,82,0.1)] hover:text-[rgba(42,10,82,0.8)] my-1"
+                }
+              >
+                {/* <route.icon size={route.iconSize ?? 20} /> */}
+                <p className="transition-all duration-200 text-sm">
+                  {route.name}
+                </p>
               </Link>
             );
           })}
