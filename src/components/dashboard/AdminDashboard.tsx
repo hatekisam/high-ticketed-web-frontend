@@ -1,5 +1,6 @@
 import React from "react";
 import Task from "./Task";
+import Project from "./Project";
 
 const AdminDashboard = () => {
   const dummyTasks = [
@@ -32,6 +33,32 @@ const AdminDashboard = () => {
       project: "Project 3",
       currentTask: "Task 3",
       completion: 20,
+    },
+  ];
+  const dummyProject = [
+    {
+      project: "Project 1",
+      client: "Client A",
+      createdAt: new Date(),
+      status: "On Hold",
+    },
+    {
+      project: "Project 2",
+      client: "Client B",
+      createdAt: new Date(),
+      status: "Pending",
+    },
+    {
+      project: "Project 3",
+      client: "Client C",
+      createdAt: new Date(),
+      status: "In Progress",
+    },
+    {
+      project: "Project 4",
+      client: "Client D",
+      createdAt: new Date(),
+      status: "Finished",
     },
   ];
 
@@ -73,9 +100,10 @@ const AdminDashboard = () => {
       </div>
       <div className="flex  gap-5 mt-3 ">
         <div className="w-[35%] h-[100%] bg-[#191A1D] rounded-md p-3">
-          <p className="text-lg mb-2 text-white">Task Completion</p>
-          {dummyTasks.map((task, index) => {
-            return <Task key={index} {...task} />;
+          <p className="text-lg mb-2 text-white">Projects</p>
+          {dummyProject.map((task, index) => {
+            //@ts-ignore
+            return <Project key={index} {...task} />;
           })}
         </div>
         <div className="w-[30%] h-[100%] bg-[#191A1D] rounded-md p-3">

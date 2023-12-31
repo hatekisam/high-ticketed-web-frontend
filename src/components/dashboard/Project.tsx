@@ -14,26 +14,28 @@ const Project: React.FC<Props> = ({ project, client, createdAt, status }) => {
   const getStatusColor = () => {
     switch (status) {
       case "On Hold":
-        return "bg-red-500";
+        return "#EF4444";
       case "Pending":
-        return "bg-yellow-500";
+        return "#EAB308";
       case "In Progress":
-        return "bg-blue-500";
+        return "#3B82F6";
       case "Finished":
-        return "bg-green-500";
+        return "#22C55E";
       default:
-        return "bg-gray-500";
+        return "#2B2B2B";
     }
   };
   return (
     <div
       className={clsx(
-        "flex justify-between items-center gap-4",
+        "flex justify-between items-center gap-4 my-3" ,
         getStatusColor()
       )}
     >
-      <div className="flex items-center gap-2">
-        <FaRegFolder />
+      <div className="flex items-start gap-2">
+        <div style={{ color: getStatusColor() }}>
+          <FaRegFolder size={50} />
+        </div>
         <div>
           <p className="font-bold">{project}</p>
           <p className="text-xs">{client}</p>
@@ -43,7 +45,7 @@ const Project: React.FC<Props> = ({ project, client, createdAt, status }) => {
         </div>
       </div>
       <div
-        className="text-sm rounded-md bg-[#2b2b2b] w-fit px-4 py-1"
+        className="text-xs rounded-md bg-[#2b2b2b] w-fit px-4 py-1"
         style={{ backgroundColor: getStatusColor() }}
       >
         {status}
