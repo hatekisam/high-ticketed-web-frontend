@@ -1,13 +1,14 @@
+
 import { SideBarRoute } from ".";
 import { FaTasks, FaUsers, FaCalendar, FaFolder } from "react-icons/fa";
 import { IoIosSettings } from "react-icons/io";
 import { IoDocuments } from "react-icons/io5";
 import { MdDashboard } from "react-icons/md";
 
-export const userRoutes: SideBarRoute[] = [
+export const adminRoutes: SideBarRoute[] = [
   {
     name: "Dashboard",
-    path: "/user",
+    path: "/admin",
     // icon: MdDashboard,
   },
   // {
@@ -41,27 +42,32 @@ export const userRoutes: SideBarRoute[] = [
   // },
   {
     name: "Calendar",
-    path: "/user/calendar",
+    path: "/admin/calendar",
     // icon: FaCalendar,
   },
   {
     name: "My Projects",
-    path: "/user/projects",
+    path: "/admin/projects",
     // icon: FaFolder,
   },
   {
+    name: "Employees",
+    path: "/admin/employees",
+    // icon: FaUsers,
+  },
+  {
     name: "Documents",
-    path: "/user/documents",
+    path: "/admin/documents",
     // icon: IoDocuments,
   },
   {
     name: "Tasks",
-    path: "/user/tasks",
+    path: "/admin/tasks",
     // icon: FaTasks,
   },
   {
     name: "Settings",
-    path: "/user/settings",
+    path: "/admin/settings",
     // icon: IoIosSettings,
   },
   // {
